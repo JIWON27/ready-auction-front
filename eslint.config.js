@@ -23,4 +23,15 @@ export default defineConfig([
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   skipFormatting,
+
+  {
+    rules: {
+      'vue/component-tags-order': [
+        'error',
+        {
+          order: ['template', 'script', 'style'],
+        },
+      ],
+    },
+  },
 ])
