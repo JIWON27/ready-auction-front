@@ -42,7 +42,7 @@
 
 	<div style="border-bottom: 1px solid #e0e0e0">
 		<v-tabs
-			v-model="model"
+			v-model="selectedTab"
 			centered
 			slider-color="black"
 			class="mx-auto"
@@ -62,7 +62,7 @@
 <script setup>
 	import { ref } from 'vue';
 
-	const model = ref(null);
+	const selectedTab = ref(null);
 	const userNickname = ref('guest님');
 	const search = ref('');
 	const notificationCount = ref(20);
