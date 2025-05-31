@@ -1,11 +1,7 @@
 <template>
-  <v-btn color="primary">Hello Vuetify</v-btn>
+	<div>hello</div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
