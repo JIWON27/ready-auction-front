@@ -49,7 +49,7 @@
 			style="max-width: 1200px"
 		>
 			<v-tab
-				v-for="(category, i) in categories"
+				v-for="(category, i) in mockCategories"
 				:key="category.name"
 				:href="`#tab-${i}`"
 			>
@@ -61,25 +61,12 @@
 
 <script setup>
 	import { ref } from 'vue';
+	import mockCategories from '@/mock/category';
 
 	const selectedTab = ref(null);
 	const userNickname = ref('guest님');
 	const search = ref('');
 	const notificationCount = ref(20);
-
-	const categories = [
-		{ name: 'HOME', description: 'HOME' },
-		{ name: 'ELECTRONICS', description: '전자제품' },
-		{ name: 'FASHION', description: '패션' },
-		{ name: 'FURNITURE', description: '가구' },
-		{ name: 'HOME_APPLIANCES', description: '가전제품' },
-		{ name: 'SPORTS', description: '스포츠' },
-		{ name: 'CAR', description: '자동차' },
-		{ name: 'ART', description: '미술품' },
-		{ name: 'JEWELRY', description: '보석' },
-		{ name: 'MUSIC_INSTRUMENTS', description: '악기' },
-		{ name: 'OTHER', description: '기타' },
-	];
 
 	function onSearch() {
 		console.log('검색어:', search.value);
