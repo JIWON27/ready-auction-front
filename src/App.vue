@@ -1,9 +1,10 @@
 <template>
 	<v-app>
 		<TheHeader />
-
-		<v-main></v-main>
-
+		<v-main>
+			<!--현재 라우터 경로에 맞는 페이지 컴포넌트를 보여주는 자리-->
+			<router-view></router-view>
+		</v-main>
 		<TheFooter />
 	</v-app>
 </template>
