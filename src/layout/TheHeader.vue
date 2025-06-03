@@ -93,7 +93,7 @@
 		console.log('검색어:', search.value);
 	}
 	function goToMyPage() {
-		router.push('/may-page');
+		router.push('/my-page');
 	}
 
 	function goToMyProducts() {
