@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AppHome from '@/components/AppHome.vue';
 import ProductDetail from '@/components/products/ProductDetail.vue';
-import ProductEnroll from '@/components/products/ProductEnroll.vue';
-import ProductEdit from '@/components/products/ProductEdit.vue';
 import ProductManagement from '@/components/products/ProductManagement.vue';
 import ProductList from '@/components/products/ProductList.vue';
+import ProductFormModal from '@/components/products/ProductFormModal.vue';
 
 const routes = [
 	{
@@ -22,16 +21,6 @@ const routes = [
 		path: '/products/manage',
 		name: 'product-manage',
 		component: ProductManagement,
-	},
-	{
-		path: '/products/new',
-		name: 'product-enroll',
-		component: ProductEnroll,
-	},
-	{
-		path: '/products/edit',
-		name: 'product-edit',
-		component: ProductEdit,
 	},
 	{
 		path: '/products',
