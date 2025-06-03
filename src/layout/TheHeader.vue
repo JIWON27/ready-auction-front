@@ -31,9 +31,28 @@
 					>
 						<v-btn icon><v-icon>mdi-bell</v-icon></v-btn>
 					</v-badge>
-					<v-avatar size="32" class="mx-2">
-						<v-icon>mdi-account</v-icon>
-					</v-avatar>
+					<v-menu offset-y>
+						<template #activator="{ props }">
+							<v-avatar
+								v-bind="props"
+								size="32"
+								class="mx-2"
+								style="cursor: pointer"
+							>
+								<v-icon>mdi-account</v-icon>
+							</v-avatar>
+						</template>
+
+						<v-list>
+							<v-list-item @click="goToMyPage">
+								<v-list-item-title>마이페이지</v-list-item-title>
+							</v-list-item>
+
+							<v-list-item @click="goToMyProducts">
+								<v-list-item-title>내 상품 관리</v-list-item-title>
+							</v-list-item>
+						</v-list>
+					</v-menu>
 					<span>{{ userNickname }}</span>
 				</v-col>
 			</v-row>
@@ -49,9 +68,9 @@
 			style="max-width: 1200px"
 		>
 			<v-tab
-				v-for="(category, i) in mockCategories"
+				v-for="category in mockCategories"
 				:key="category.name"
-				:href="`#tab-${i}`"
+				@click="goToCategory(category.name)"
 			>
 				{{ category.description }}
 			</v-tab>
@@ -61,15 +80,31 @@
 
 <script setup>
 	import { ref } from 'vue';
+	import { useRouter } from 'vue-router';
 	import mockCategories from '@/mock/category';
 
 	const selectedTab = ref(null);
 	const userNickname = ref('guest님');
 	const search = ref('');
 	const notificationCount = ref(20);
+	const router = useRouter();
 
 	function onSearch() {
 		console.log('검색어:', search.value);
+	}
+	function goToMyPage() {
+		router.push('/may-page');
+	}
+
+	function goToMyProducts() {
+		router.push('/products/manage');
+	}
+	function goToCategory(categoryName) {
+		if (categoryName === 'HOME') {
+			router.push('/');
+		} else {
+			router.push({ path: '/products', query: { category: categoryName } });
+		}
 	}
 </script>
 
