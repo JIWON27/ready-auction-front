@@ -3,7 +3,6 @@ import AppHome from '@/components/AppHome.vue';
 import ProductDetail from '@/components/products/ProductDetail.vue';
 import ProductManagement from '@/components/products/ProductManagement.vue';
 import ProductList from '@/components/products/ProductList.vue';
-import ProductFormModal from '@/components/products/ProductFormModal.vue';
 
 const routes = [
 	{
